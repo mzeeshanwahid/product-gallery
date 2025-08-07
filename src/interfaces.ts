@@ -6,4 +6,5 @@ export interface PrimaryLayoutProps {
 
 export interface MenuItemProps {
   name: string;
+  path: string;
 }

@@ -1,14 +1,31 @@
-import PrimaryLayout from "./layouts/PrimaryLayout";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
+import HomePage from './pages/Home';
+import ProductsPage from "./pages/Products";
 
 function App() {
+
+  const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/products",
+    element: <ProductsPage />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />,
+  },
+]);
+
   return (
-    <>
-      <PrimaryLayout>
-        <p>Hello Vite</p>
-      </PrimaryLayout>
-    </>
-  );
+    <RouterProvider router={router} />
+  )
 }
 
-export default App;
-
+export default App

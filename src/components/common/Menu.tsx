@@ -13,8 +13,8 @@ const HeaderMenu = () => {
       bg="white"
     >
       <Box display="flex" gap="8">
-        <MenuItem name="Home"/>
-        <MenuItem name="Products"/>
+        <MenuItem name="Home" path="/" />
+        <MenuItem name="Products" path="/products" />
       </Box>
     </Flex>
   );

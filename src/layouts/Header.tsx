@@ -1,6 +1,7 @@
 import { Box, Image } from "@chakra-ui/react";
 import LogoImg from "../assets/images/logo.png";
 import HeaderMenu from "../components/common/Menu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
       justifyContent="start"
       ps="10"
     >
-      <Box>
+      <Link to="/">
         <Image
           src={LogoImg}
           width="200px"
@@ -22,7 +23,7 @@ const Header = () => {
           objectFit="contain"
           alt="logo"
         />
-      </Box>
+      </Link>
       <HeaderMenu />
     </Box>
   );

@@ -23,9 +23,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       maxW="400px"
       bg="white"
     >
-      {/* Image Wrapper for Fade Effect */}
       <Box position="relative" w="100%" h="220px" overflow="hidden">
-        {/* First image */}
         <Image
           src={firstImage}
           alt={product.title}
@@ -38,7 +36,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
           transition="opacity 0.4s ease-in-out"
           opacity={hovered ? 0 : 1}
         />
-        {/* Second image */}
         <Image
           src={secondImage}
           alt={product.title}
@@ -83,9 +80,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <Text fontWeight="bold" fontSize="md" color="teal.500">
               ${product.price.toFixed(2)}
             </Text>
-            {/* <Text fontSize="sm" color="yellow.500">
-              ⭐ {product.rating}
-            </Text> */}
             <Rating value={product.rating || 0} />
           </Box>
         </Stack>

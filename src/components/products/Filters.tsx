@@ -35,7 +35,7 @@ const ProductFilters = ({ onApply }: ProductFiltersProps) => {
     setSorting(null);
     setSearch("");
 
-    onApply(null);
+    onApply('');
   };
 
   return (

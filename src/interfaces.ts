@@ -83,7 +83,7 @@ export interface SearchProps {
 }
 
 export interface ProductFiltersProps {
-  onApply: (query: string | null) => void;
+  onApply: (query: string) => void;
 }
 
 export interface SelectItem {
@@ -96,4 +96,10 @@ export interface ChakraSelectProps {
   placeholder: string;
   category: string;
   setCategory: (value: string) => void;
+}
+
+export interface ProductFeedProps {
+  products: ProductInfo[],
+  pagination: Pagination
+  onPageChange: (page: number) => void;
 }

@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "docker build -t product-gallery .",
+    "docker:run": "docker run -d -p 3000:80 product-gallery"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.24.2",

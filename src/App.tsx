@@ -1,7 +1,11 @@
+import PrimaryLayout from "./layouts/PrimaryLayout";
+
 function App() {
   return (
     <>
-      <p>Hello Vite</p>
+      <PrimaryLayout>
+        <p>Hello Vite</p>
+      </PrimaryLayout>
     </>
   );
 }

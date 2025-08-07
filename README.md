@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# Product Gallary - React + TypeScript + Vite Starter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, fast, and modern starter template for building React applications with TypeScript and Vite. Includes hot module replacement (HMR), sensible ESLint defaults, and easy extensibility for production-ready apps.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Project Overview](#project-overview)
+- [Getting Started](#getting-started)
+- [Folder Structure](#folder-structure)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project Overview
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+This project provides a minimal setup to get Product Gallery. It uses Chakra UI, Axios and React. 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Getting Started
+
+Follow these steps to clone and run the project locally:
+
+### 1. Clone the repository
+
+```bash
+git clone git@github.com:mzeeshanwahid/product-gallery.git
+cd product-gallery
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+# or
+yarn install
 ```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173) by default.
+
+### 4. Build for production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+---
+
+## Folder Structure
+
+A typical folder structure for this template looks like:
+
+```
+.
+├── public/             # Static assets (served as-is)
+├── src/                # Application source code
+│   ├── assets/         # Images, fonts, etc.
+│   ├── components/     # Reusable React components
+│   ├── icons/          # Reusable icons
+│   ├── layouts/        # Reusable layouts
+│   ├── services/       # Reusable services that communicate with API
+│   ├── pages/          # Pages
+│   ├── App.tsx         # Main App component
+│   ├── main.tsx        # Entry point for React/Vite
+│   └── ...             # Other feature folders or files
+├── index.html          # HTML template
+├── package.json        # Project metadata and scripts
+├── tsconfig.json       # TypeScript configuration
+├── vite.config.ts      # Vite configuration
+└── README.md           # Project documentation
+```
+
+- **public/**: Static files that are copied directly to the build output.
+- **src/**: All source code, including components, assets, services, pages and other reuseable elements.
+- **index.html**: The main HTML file loaded by Vite.
+- **package.json**: Lists dependencies and scripts.
+- **tsconfig.json**: TypeScript compiler options.
+- **vite.config.ts**: Vite configuration file.
+
+

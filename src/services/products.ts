@@ -13,7 +13,7 @@ export const getProducts = async (pageNo: number, params: string) => {
     url = `${url}&${params}`;
   }
 
-  console.log(`Calling API: ${url}`)
+  // console.log(`Calling API: ${url}`)
   const result = await axios.get(url, axiosDefaultConfig);
 
   if (result.status !== 200) {

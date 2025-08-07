@@ -1,4 +1,4 @@
-import { ButtonGroup, IconButton, Pagination } from "@chakra-ui/react";
+import { Box, ButtonGroup, IconButton, Pagination } from "@chakra-ui/react";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import type { PaginationComponentProps } from "../../interfaces";
 
@@ -22,13 +22,18 @@ const PaginationComponent = ({
           </IconButton>
         </Pagination.PrevTrigger>
 
-        <Pagination.Items
-          render={(page) => (
-            <IconButton variant={{ base: "ghost", _selected: "outline" }}>
-              {page.value}
-            </IconButton>
-          )}
-        />
+        <Box display={["none", "none", "block"]}>
+          <Pagination.Items
+            render={(page) => (
+              <IconButton variant={{ base: "ghost", _selected: "outline" }}>
+                {page.value}
+              </IconButton>
+            )}
+          />
+        </Box>
+        <Box display={["block", "block", "none"]}>
+          <Pagination.PageText />
+        </Box>
 
         <Pagination.NextTrigger asChild>
           <IconButton>

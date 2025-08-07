@@ -20,7 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       _hover={{ transform: "translateY(-4px)", boxShadow: "lg" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      maxW="400px"
+      maxW={["360px", "360px","400px"]}
       bg="white"
     >
       <Box position="relative" w="100%" h="220px" overflow="hidden">

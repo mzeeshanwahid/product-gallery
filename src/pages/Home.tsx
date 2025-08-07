@@ -30,22 +30,30 @@ const HomePage = () => {
           mixBlendMode="darken"
         />
         <Box display="flex" alignItems="center" gap={3}>
-          <Text fontSize={"20px"} fontWeight="400" color="black">
+          <Text
+            fontSize={["16px", "16px", "20px"]}
+            fontWeight="400"
+            color="black"
+          >
             Hi 👋,
           </Text>
           <Image
             src={LogoImg}
-            width="150px"
+            width={["120px", "120px", "150px"]}
             height="auto"
             objectFit="contain"
             onClick={visitEmperia}
             cursor="pointer"
           />
-          <Text fontSize={"20px"} fontWeight="400" color="black">
+          <Text
+            fontSize={["16px", "16px", "20px"]}
+            fontWeight="400"
+            color="black"
+          >
             Team
           </Text>
         </Box>
-        <Text fontSize={"20px"} fontWeight="400" color="gray">
+        <Text fontSize={["16px", "16px", "20px"]} fontWeight="400" color="gray">
           Navigate to <Link to="/products">products page</Link> to explore
           products
         </Text>

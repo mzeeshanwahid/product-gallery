@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import ProductFeed from "../components/products/Feed";
 import ProductFilters from "../components/products/Filters";
@@ -6,6 +6,7 @@ import type { Pagination, ProductInfo } from "../interfaces";
 import PrimaryLayout from "../layouts/PrimaryLayout";
 import { getProducts } from "../services/products";
 import NoProductResult from "../components/products/NoResult";
+import FilterDrawer from "../components/products/FilterDrawer";
 
 const ProductsPage = () => {
   const [productFeed, setProductFeed] = useState<ProductInfo[]>([]);
@@ -25,7 +26,7 @@ const ProductsPage = () => {
 
       if (response && response.pagination.totalItems > 0) {
         // console.log(`Result: ${JSON.stringify(response)}`);
-        console.log(`Product Fetched`);
+        // console.log(`Product Fetched`);
 
         setProductFeed(response.data);
         setPaginationData(response.pagination);
@@ -39,7 +40,7 @@ const ProductsPage = () => {
   }, [pageNo, queryParams]);
 
   const onApplyFilters = (query: string) => {
-    console.log(`Query: ${query}`);
+    // console.log(`Query: ${query}`);
     setQueryParams(query);
   };
 
@@ -48,11 +49,16 @@ const ProductsPage = () => {
       <Grid
         templateColumns={{ base: "1fr", md: "30% 70%" }}
         gap={6}
-        p={5}
+        p={["15px", "15px", 5]}
         mt={[0, 0, 5]}
       >
         <GridItem>
-          <ProductFilters onApply={onApplyFilters} />
+          <Box display={["none", "none", "block"]}>
+            <ProductFilters onApply={onApplyFilters} />
+          </Box>
+          <Box display={["block", "block", "none"]}>
+            <FilterDrawer onApply={onApplyFilters} />
+          </Box>
         </GridItem>
         <GridItem pr={[0, 0, 10]}>
           {noResult ? (

@@ -103,3 +103,7 @@ export interface ProductFeedProps {
   pagination: Pagination
   onPageChange: (page: number) => void;
 }
+
+export interface FilterDrawerProps {
+  onApply: (query: string) => void;
+}

@@ -5,21 +5,28 @@ const axiosDefaultConfig = {
 };
 
 export const getProducts = async (pageNo: number, params: string) => {
-  const pageNoToConsider = params && params !== '' ? 1 : pageNo;
+  try {
+    const pageNoToConsider = params && params !== "" ? 1 : pageNo;
 
-  let url = `${import.meta.env.VITE_REST_API_URL}/products?pageSize=12&pageNo=${pageNoToConsider}`;
+    let url = `${
+      import.meta.env.VITE_REST_API_URL
+    }/products?pageSize=12&pageNo=${pageNoToConsider}`;
 
-  if (params && params !== "") {
-    url = `${url}&${params}`;
-  }
+    if (params && params !== "") {
+      url = `${url}&${params}`;
+    }
 
-  // console.log(`Calling API: ${url}`)
-  const result = await axios.get(url, axiosDefaultConfig);
+    // console.log(`Calling API: ${url}`)
+    const result = await axios.get(url, axiosDefaultConfig);
 
-  if (result.status !== 200) {
+    if (result.status !== 200) {
+      return null;
+    }
+
+    return result.data;
+  } catch (err) {
+    console.log("Network Error");
     return null;
   }
-
-  return result.data;
 };
 

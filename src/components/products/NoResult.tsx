@@ -20,7 +20,7 @@ const NoProductResult = () => {
       />
 
       <Text fontSize={"20px"} fontWeight="400" color="black" maxW="340px" textAlign="center">
-        Oops!! No results are found. <br/>Adjust filters to get some products
+        Oops!! No results are found. <br/>Try adjust filters to get some products
       </Text>
     </Box>
   );
